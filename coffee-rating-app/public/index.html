@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover, rate and compare coffee roasts.">
+  <title>BeanScore — Coffee Rating</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">☕</span><span>Bean<span class="brand-accent">Score</span></span></a>
+    <span class="top-note">THE COFFEE COMMUNITY</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">FIND YOUR NEXT FAVOURITE</p>
+        <h1>Every cup has<br><em>a story.</em></h1>
+        <p class="hero-description">Explore coffee roasts from around the world. Taste, rate and help the community find the best cup.</p>
+        <a class="hero-link" href="#coffee-list">Explore the collection <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="coffee-circle circle-one"></div>
+        <div class="coffee-circle circle-two"></div>
+        <div class="coffee-cup">☕</div>
+        <span class="art-label">GOOD COFFEE<br>GOOD MOOD</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Community statistics">
+      <div class="stat"><strong id="coffee-count">—</strong><span>COFFEE ROASTS</span></div>
+      <div class="stat"><strong id="vote-count">—</strong><span>COMMUNITY VOTES</span></div>
+      <div class="stat"><strong id="top-rating">—</strong><span>TOP RATING</span></div>
+    </section>
+
+    <section class="section-heading" id="coffee-list">
+      <div><p class="eyebrow">THE COLLECTION</p><h2>Explore the roasts</h2></div>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search coffee or origin…" aria-label="Search coffee">
+        <select id="roast-filter" aria-label="Filter by roast">
+          <option value="all">All roasts</option>
+          <option value="Light">Light</option>
+          <option value="Medium">Medium</option>
+          <option value="Dark">Dark</option>
+        </select>
+        <select id="sort" aria-label="Sort coffee">
+          <option value="rating">Top rated</option>
+          <option value="votes">Most votes</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="status" class="status" role="status">Loading coffee collection…</div>
+    <section id="coffee-grid" class="coffee-grid" aria-live="polite"></section>
+
+    <section class="leaderboard">
+      <div><p class="eyebrow">COMMUNITY FAVOURITES</p><h2>Top-rated coffees</h2></div>
+      <ol id="leaderboard-list" class="leaderboard-list"></ol>
+    </section>
+    <footer><span>BeanScore © 2026</span><span>Made for coffee lovers, one vote at a time.</span></footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
